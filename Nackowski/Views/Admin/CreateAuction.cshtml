@@ -1,0 +1,66 @@
+﻿@model Nackowski.DAL.Model.AuctionModel
+
+@{
+    ViewData["Title"] = "CreateAuction";
+}
+
+<h2>CreateAuction</h2>
+
+<h4>AuctionModel</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="CreateAuction" asp-controller="Admin">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            
+            <div class="form-group">
+                <label asp-for="Titel" class="control-label"></label>
+                <input asp-for="Titel" class="form-control" />
+                <span asp-validation-for="Titel" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Beskrivning" class="control-label"></label>
+                <input asp-for="Beskrivning" class="form-control" />
+                <span asp-validation-for="Beskrivning" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                
+                
+               
+                @*<label asp-for="StartDatum" class="control-label"></label>
+        <input asp-for="StartDatum" class="form-control" value="2018-09-10 12:00"/>
+        <span asp-validation-for="StartDatum" class="text-danger"></span>*@
+            </div>
+            <div class="form-group">
+                <input id="datepicker" width="270" />
+                
+                @*<label asp-for="SlutDatum" class="control-label"></label>
+        <input asp-for="SlutDatum" class="form-control" value="2018-09-11 12:00"/>
+        <span asp-validation-for="SlutDatum" class="text-danger"></span>*@
+            </div>
+            <div class="form-group">
+                
+                <input asp-for="Gruppkod" class="form-control" value="1060" type="hidden"/>
+                
+            </div>
+            <div class="form-group">
+                <label asp-for="Utropspris" class="control-label"></label>
+                <input asp-for="Utropspris" class="form-control" />
+                <span asp-validation-for="Utropspris" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SkapadAv" class="control-label"></label>
+                <input asp-for="SkapadAv" class="form-control" />
+                <span asp-validation-for="SkapadAv" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
