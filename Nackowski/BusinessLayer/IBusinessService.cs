@@ -4,7 +4,7 @@ using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Nackowski.DAL.Model;
-
+using Nackowski.ViewModels;
 
 namespace Nackowski.BusinessLayer
 {
@@ -16,7 +16,7 @@ namespace Nackowski.BusinessLayer
 
         Task<HttpResponseMessage> CreateBid(int auctionId);
 
-        Task<List<AuctionModel>> FindAuctions(string searchString);
+        List<AuctionWithBidsVM> FindAuctions(string searchString);
         Task<List<AuctionModel>> GetAuctions();
         Task<AuctionModel> GetAuction(int auctionId);
         Task<List<BidModel>> GetBids(int auctionId);

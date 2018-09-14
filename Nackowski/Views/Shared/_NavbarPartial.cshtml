@@ -1,9 +1,13 @@
 ﻿@using Microsoft.AspNetCore.Identity;
 @using  Nackowski.Identity;
 
+
 @inject SignInManager<IdentityUser> SignInManager
 @inject UserManager<IdentityUser> UserManager
 
+@{ 
+    string searchString = "";
+}
 
 <div class="" id="headerContainer">
 
@@ -96,8 +100,8 @@
                     <a class="nav-link disabled" href="#">Disabled</a>
                 </li>
             </ul>
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <form asp-controller="Home" asp-action="FindAuctions" class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" asp-for="@searchString" type="text" placeholder="Search" aria-label="Search">
                 <button class="btn my-2 my-sm-0" type="submit">Search</button>
             </form>
         </div>

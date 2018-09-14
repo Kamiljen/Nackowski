@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Nackowski.DAL.Model;
 using Nackowski.DAL;
 using System.Net.Http;
+using Nackowski.ViewModels;
 
 namespace Nackowski.BusinessLayer
 {
@@ -37,10 +38,21 @@ namespace Nackowski.BusinessLayer
             return _api.EditAuction(model);
         }
 
-        public async Task<List<AuctionModel>> FindAuctions(string searchString)
+        public List<AuctionWithBidsVM> FindAuctions(string searchString)
         {
-            var allAuctions = await GetAuctions();
-            return allAuctions.Where(x => x.Titel.Contains(searchString) || x.Beskrivning.Contains(searchString)).ToList();
+            var searchResults = new List<AuctionWithBidsVM>();
+            var allAuctions = GetAuctions();
+            var filteredAuctions = allAuctions.Result.Where(x => x.Titel.Contains(searchString) || x.Beskrivning.Contains(searchString));
+            foreach(var auction in filteredAuctions)
+            {
+                searchResults.Add(new AuctionWithBidsVM
+                {
+                    Auction = auction, Bids = GetBids(auction.AuktionID).Result
+                });
+
+            }
+
+            return searchResults;
         }
 
         public Task<AuctionModel> GetAuction(int auctionId)

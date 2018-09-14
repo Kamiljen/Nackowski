@@ -23,17 +23,18 @@ namespace Nackowski.Controllers
 
         public async Task<IActionResult> Index()
         {
-            List<AuctionModel> auctions = new List<AuctionModel>();
-           auctions =  await _businessService.GetAuctions();
+            
+            var auctions =  await _businessService.GetAuctions();
             
             return View(auctions);
         }
 
         public IActionResult FindAuctions(string searchInput)
         {
-            var searchResults = new List<AuctionWithBidsVM();
-            searchResults._businessService.FindAuctions(searchInput);
-            return View(searchResults);
+            
+            var result = _businessService.FindAuctions(searchInput);
+            
+            return View(result);
         }
 
 
