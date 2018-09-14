@@ -41,8 +41,8 @@ namespace Nackowski.BusinessLayer
         public List<AuctionWithBidsVM> FindAuctions(string searchString)
         {
             var searchResults = new List<AuctionWithBidsVM>();
-            var allAuctions = GetAuctions();
-            var filteredAuctions = allAuctions.Result.Where(x => x.Titel.Contains(searchString) || x.Beskrivning.Contains(searchString));
+            var allAuctions = GetAuctions().Result;
+            var filteredAuctions = allAuctions.Where(x => x.Titel.Contains(searchString) || x.Beskrivning.Contains(searchString));
             foreach(var auction in filteredAuctions)
             {
                 searchResults.Add(new AuctionWithBidsVM

@@ -2,12 +2,9 @@
 @using  Nackowski.Identity;
 
 
-@inject SignInManager<IdentityUser> SignInManager
-@inject UserManager<IdentityUser> UserManager
+        @inject SignInManager<IdentityUser> SignInManager
+        @inject UserManager<IdentityUser> UserManager
 
-@{ 
-    string searchString = "";
-}
 
 <div class="" id="headerContainer">
 
@@ -101,7 +98,7 @@
                 </li>
             </ul>
             <form asp-controller="Home" asp-action="FindAuctions" class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" asp-for="@searchString" type="text" placeholder="Search" aria-label="Search">
+                <input class="form-control mr-sm-2" name="searchInput" type="text" placeholder="Search" aria-label="Search">
                 <button class="btn my-2 my-sm-0" type="submit">Search</button>
             </form>
         </div>
