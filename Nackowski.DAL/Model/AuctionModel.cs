@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
 using System.Text;
 
@@ -17,9 +18,11 @@ namespace Nackowski.DAL.Model
         [DataMember]
         public string Beskrivning { get; set; }
 
+        [DisplayFormat(DataFormatString = @"{0:dd\/MM\/yyyy}", ApplyFormatInEditMode = true)]
         [DataMember(Name = "StartDatum")]
         public string StartDatumString { get; set; }
 
+        [DisplayFormat(DataFormatString = @"{0:dd\/MM\/yyyy}", ApplyFormatInEditMode = true)]
         [DataMember(Name = "SlutDatum")]
         public string SlutDatumString { get; set; }
 

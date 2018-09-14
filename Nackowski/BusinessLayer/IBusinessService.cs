@@ -15,7 +15,8 @@ namespace Nackowski.BusinessLayer
         Task<HttpResponseMessage> DeleteBid(int bidId);
 
         Task<HttpResponseMessage> CreateBid(int auctionId);
-        
+
+        Task<List<AuctionModel>> FindAuctions(string searchString);
         Task<List<AuctionModel>> GetAuctions();
         Task<AuctionModel> GetAuction(int auctionId);
         Task<List<BidModel>> GetBids(int auctionId);

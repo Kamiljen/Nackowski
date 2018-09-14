@@ -1,4 +1,4 @@
-﻿@using Microsoft.AspNetCore.Identity
+﻿@using Microsoft.AspNetCore.Identity;
 @using  Nackowski.Identity;
 
 @inject SignInManager<IdentityUser> SignInManager
@@ -6,18 +6,25 @@
 
 @if (SignInManager.IsSignedIn(User))
 {
-    <form asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })" method="post" id="logoutForm" class="navbar-right text-muted">
-        
-                <a asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @UserManager.GetUserName(User)!</a>
-            
-                <button type="submit" class="btn btn-link navbar-btn navbar-link text-muted">Logout</button>
-      
-    </form>
+   
+    <li class="nav-item">
+        <a asp-area="Identity" class="nav-link" asp-page="/Account/Manage/Index" title="Manage">Hej @UserManager.GetUserName(User)</a>
+    </li>
+    <li class="nav-item">
+        <form asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })" method="post" id="logoutForm" class="navbar-right text-muted">
+            <button type="submit" class="btn btn-link navbar-btn navbar-link text-muted">Logout</button>
+        </form>
+    </li>
 }
 else
 {
-    
-        <a asp-area="Identity" class="btn btn-link navbar-btn navbar-link text-muted" asp-page="/Account/Register">Register</a>
-        <a asp-area="Identity" class="btn btn-link navbar-btn navbar-link text-muted" asp-page="/Account/Login">Login</a>
-    
+
+    <li class="nav-item">
+        <a asp-area="Identity" class="nav-link" asp-page="/Account/Register">Registrera</a>
+    </li>
+    <li class="nav-item">
+        <a asp-area="Identity" class="nav-link" asp-page="/Account/Login">Logga in</a>
+    </li>
+
 }
+

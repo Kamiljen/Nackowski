@@ -3,5 +3,6 @@
 
 // Write your JavaScript code.
 $('#datepicker').datepicker({
-    uiLibrary: 'bootstrap4'
+    uiLibrary: 'bootstrap4',
+    format: 'HH:MM yyyy-dd-mm'
 });

@@ -18,6 +18,7 @@ namespace Nackowski.DAL
         Task<HttpResponseMessage> CreateBid(int auctionId);
         Task<HttpResponseMessage> DeleteBid(int bidId);
 
+        
         Task<List<AuctionModel>> GetAuctions();
         Task<AuctionModel> GetAuction(int auctionId);
         Task<List<BidModel>> GetBids(int auctionId);

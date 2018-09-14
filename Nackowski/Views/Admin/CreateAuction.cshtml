@@ -27,16 +27,15 @@
                 
                 
                
-                @*<label asp-for="StartDatum" class="control-label"></label>
-        <input asp-for="StartDatum" class="form-control" value="2018-09-10 12:00"/>
-        <span asp-validation-for="StartDatum" class="text-danger"></span>*@
+                <label asp-for="StartDatum" class="control-label"></label>
+        <input asp-for="StartDatum" type="datetime-local" class="form-control" id="datepicker" data-type="datepicker" data-datepicker="true"/>
+        <span asp-validation-for="StartDatum" class="text-danger" ></span>
             </div>
             <div class="form-group">
-                <input id="datepicker" width="270" />
                 
-                @*<label asp-for="SlutDatum" class="control-label"></label>
-        <input asp-for="SlutDatum" class="form-control" value="2018-09-11 12:00"/>
-        <span asp-validation-for="SlutDatum" class="text-danger"></span>*@
+                <label asp-for="SlutDatum" class="control-label"></label>
+        <input asp-for="SlutDatum" type="datetime-local" class="form-control" id="datepicker" data-type="datepicker" />
+        <span asp-validation-for="SlutDatum" class="text-danger"></span>
             </div>
             <div class="form-group">
                 
@@ -54,7 +53,7 @@
                 <span asp-validation-for="SkapadAv" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="Create" class="btn btn-default"/>
             </div>
         </form>
     </div>

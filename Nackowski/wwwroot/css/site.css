@@ -1,37 +1,69 @@
 ﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification\ 
 for details on configuring this project to bundle and minify static web assets. */
 body {
-    padding-top: 50px;
+    padding-top: 0px;
     padding-bottom: 20px;
 }
+#topBar {
+    border-bottom: 1px solid rgba(227, 226, 226,1);
+    height: 30px;
+}
+#bottomBar {
+    height: 100px;
+    -webkit-box-shadow: 3px 12px 37px -15px rgba(5,5,5,0.74);
+    -moz-box-shadow: 3px 12px 37px -15px rgba(5,5,5,0.74);
+    box-shadow: 3px 12px 37px -15px rgba(5,5,5,0.74);
+}
+headerContainer{
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    
+}
+.carousel-inner > .item {
+    height: 100vh;
+}
+.carousel-inner > .item > img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    max-height: 800px;
+    width: auto;
+}
 
-/* Wrapping element */
+#mainCarousel{
+    margin-top: 15px;
+    height: 500px;
+    width: auto;
+}
+/* Wrapping element 
 /* Set some basic padding to keep content from hitting the edges */
-.body-content {
+/*.body-content {
     padding-left: 15px;
     padding-right: 15px;
-}
-
+}*/
 /* Carousel */
-.carousel-caption p {
+/*.carousel-caption p {
     font-size: 20px;
     line-height: 1.4;
-}
-
+}*/
 /* Make .svg files in the carousel display properly in older browsers */
-.carousel-inner .item img[src$=".svg"] {
+/*.carousel-inner .item img[src$=".svg"] {
     width: 100%;
-}
-
+}*/
 /* QR code generator */
-#qrCode {
+/*#qrCode {
     margin: 15px;
-}
-
+}*/
 /* Hide/rearrange for smaller screens */
 @media screen and (max-width: 767px) {
     /* Hide captions */
     .carousel-caption {
-        display: none;
+            display: none;
+        }
     }
-}
+
+    */

@@ -8,6 +8,7 @@ using Nackowski.Models;
 using System.Net.Http;
 using Nackowski.BusinessLayer;
 using Nackowski.DAL.Model;
+using Nackowski.ViewModels;
 
 namespace Nackowski.Controllers
 {
@@ -28,10 +29,12 @@ namespace Nackowski.Controllers
             return View(auctions);
         }
 
-        //public async Task<AuctionModel> GetAuction()
-        //{
-
-        //}
+        public IActionResult FindAuctions(string searchInput)
+        {
+            var searchResults = new List<AuctionWithBidsVM();
+            searchResults._businessService.FindAuctions(searchInput);
+            return View(searchResults);
+        }
 
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

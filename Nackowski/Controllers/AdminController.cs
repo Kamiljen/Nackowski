@@ -32,6 +32,8 @@ namespace Nackowski.Controllers
         [HttpPost]
         public IActionResult CreateAuction(AuctionModel model)
         {
+            model.SlutDatumString = model.SlutDatum.ToString();
+            model.StartDatumString = model.StartDatum.ToString();
             var result = _businessService.CreateAuction(model);
             return RedirectToAction("Dashboard","Admin");
         }

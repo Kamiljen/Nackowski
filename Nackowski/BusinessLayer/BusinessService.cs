@@ -37,6 +37,12 @@ namespace Nackowski.BusinessLayer
             return _api.EditAuction(model);
         }
 
+        public async Task<List<AuctionModel>> FindAuctions(string searchString)
+        {
+            var allAuctions = await GetAuctions();
+            return allAuctions.Where(x => x.Titel.Contains(searchString) || x.Beskrivning.Contains(searchString)).ToList();
+        }
+
         public Task<AuctionModel> GetAuction(int auctionId)
         {
             return _api.GetAuction(auctionId);
